@@ -32,7 +32,7 @@ Screenshot 2
 
 ## Installation
 
-- Clone this repository to your local machine using https://github.com/yourusername/kotlin-webview-sample-app.git
+- Clone this repository to your local machine using https://github.com/Kisheo/Kotlin-Webview-Example.git
 - Open the project in Android Studio
 - Run the app on an emulator or a physical device
 
