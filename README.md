@@ -5,7 +5,7 @@ This is a sample Android app that demonstrates how to load a web page into a Web
 Screenshots
 
 
-![Kotlin WebView.gif](./images/kotlin.gif)
+<img src="./images/kotlin.gif" alt="alt text" max-width="300"/>
 
 ![Nav menu.png](./images/menu.png)
 
