@@ -16,7 +16,7 @@ Screenshot 2
 
     - AndroidX core library
     - AndroidX appcompat library
-    Material Design library
+    - Material Design library
     ConstraintLayout library
     Android Architecture Components (ViewModel and LiveData)
     Android Navigation Component
@@ -36,9 +36,9 @@ Screenshot 2
 
 ## Usage
 
-    Enter a URL in the text field and click the "Load" button.
-    The web page will be loaded into the WebView component.
-    If an error occurs, an appropriate message will be displayed.
+    - Enter a URL in the text field and click the "Load" button.
+   - The web page will be loaded into the WebView component.
+  -  If an error occurs, an appropriate message will be displayed.
 
 ## License
 
