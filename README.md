@@ -10,7 +10,7 @@ Screenshot 2
 
 1. Loads a web page into a WebView component
 2. Displays a progress bar while the page is loading
-3. Handles errors and displays appropriate messages
+3.[TODO] Handles errors and displays appropriate messages
 
 ## Libraries
 
@@ -18,15 +18,14 @@ Screenshot 2
 - AndroidX appcompat library
 - Material Design library
 - ConstraintLayout library
-- Android Architecture Components (ViewModel and LiveData)
+- Android Architecture Components
 - Android Navigation Component
-- JUnit and Espresso for testing
 
 ## Requirements
 
 - Android Studio 4.0 or higher
 - Android SDK 21 or higher
-- Kotlin 1.5.21 or higher
+- Kotlin 1.8.x or higher
 
 ## Installation
 
@@ -36,9 +35,9 @@ Screenshot 2
 
 ## Usage
 
-- Enter a URL in the text field and click the "Load" button.
+- Enter a URL in the HomeViewModel.
 - The web page will be loaded into the WebView component.
-- If an error occurs, an appropriate message will be displayed.
+- If an error occurs, The error page will be displayed.
 
 ## License
 
