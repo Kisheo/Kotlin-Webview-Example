@@ -8,11 +8,9 @@ Screenshot 1
 Screenshot 2
 ## Features
 
-1.Loads a web page into a WebView component
-
-2.Displays a progress bar while the page is loading
-
-3.Handles errors and displays appropriate messages
+1. Loads a web page into a WebView component
+2. Displays a progress bar while the page is loading
+3. Handles errors and displays appropriate messages
 
 ## Libraries
 
