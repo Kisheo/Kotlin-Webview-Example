@@ -13,7 +13,7 @@ class HomeViewModel : ViewModel() {
     val isLoading: LiveData<Boolean> = _isLoading
 
     init {
-        _url.value = "https://inotech.co.tz"
+        _url.value = "https://google.com"
         _isLoading.value = true
     }
 
