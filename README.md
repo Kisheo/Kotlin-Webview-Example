@@ -4,10 +4,9 @@
 This is a sample Android app that demonstrates how to load a web page into a WebView component using Kotlin programming language.
 Screenshots
 
-Screenshot 1
+
 ![Kotlin WebView.gif](./images/kotlin.gif)
 
-Screenshot 2
 ![Nav menu.png](./images/menu.png)
 
 ## Features
@@ -40,7 +39,7 @@ Screenshot 2
 ## Usage
 
 - Enter a URL in the HomeViewModel.
-![example image](./images/url.png)
+<img src="./images/url.png" alt="alt text" max-width="200"/>
 
 - The web page will be loaded into the WebView component.
 - If an error occurs, The error page will be displayed.
