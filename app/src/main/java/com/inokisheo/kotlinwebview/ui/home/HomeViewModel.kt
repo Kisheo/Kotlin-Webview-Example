@@ -6,8 +6,23 @@ import androidx.lifecycle.ViewModel
 
 class HomeViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+    private val _url = MutableLiveData<String>()
+    val url: LiveData<String> = _url
+
+    private val _isLoading = MutableLiveData<Boolean>()
+    val isLoading: LiveData<Boolean> = _isLoading
+
+    init {
+        _url.value = "https://inotech.co.tz"
+        _isLoading.value = true
     }
-    val text: LiveData<String> = _text
+
+    fun onPageStarted() {
+        _isLoading.value = true
+
+    }
+
+    fun onPageFinished() {
+        _isLoading.value = false
+    }
 }
