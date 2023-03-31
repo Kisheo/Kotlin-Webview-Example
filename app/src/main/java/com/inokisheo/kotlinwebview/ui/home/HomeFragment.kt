@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 progressBar.isVisible =false
+                
                 super.onPageFinished(view, url)
             }
         }
