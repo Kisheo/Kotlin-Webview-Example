@@ -5,9 +5,7 @@ This is a sample Android app that demonstrates how to load a web page into a Web
 Screenshots
 
 
-<img src="./images/ezgif.com-resize.gif" alt="alt text" max-width="300"/>
-
-<img src="./images/menu.png" alt="menu" width="200"/>
+<img src="./images/ezgif.com-resize.gif" alt="alt text" max-width="300"/>  | <img src="./images/menu.png" alt="menu" width="200"/>
 
 ## Features
 
