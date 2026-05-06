@@ -182,10 +182,14 @@ class MainActivity : AppCompatActivity() {
             setAcceptThirdPartyCookies(webView, true)
         }
 
-        // AppCache is deprecated in API 33+ — suppress for older targets
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
-            @Suppress("DEPRECATION")
-            settings.setAppCacheEnabled(true)
+        // AppCache was deprecated/removed on newer SDKs. Call via reflection only if available
+        try {
+            val method = settings.javaClass.getMethod("setAppCacheEnabled", Boolean::class.javaPrimitiveType)
+            method.invoke(settings, true)
+        } catch (e: NoSuchMethodException) {
+            Log.w(TAG, "setAppCacheEnabled not present on this SDK, skipping")
+        } catch (e: Exception) {
+            Log.w(TAG, "Failed to enable AppCache via reflection", e)
         }
 
         // Enable remote debugging in debug builds
