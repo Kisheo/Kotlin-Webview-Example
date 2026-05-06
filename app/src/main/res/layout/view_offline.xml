@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -12,7 +13,7 @@
         android:layout_marginBottom="24dp"
         android:contentDescription="@string/offline_icon_desc"
         android:src="@android:drawable/ic_menu_close_clear_cancel"
-        android:tint="@color/purple_500" />
+        app:tint="@color/purple_500" />
 
     <TextView
         android:layout_width="wrap_content"

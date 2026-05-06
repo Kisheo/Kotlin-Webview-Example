@@ -286,7 +286,7 @@ class MainActivity : AppCompatActivity() {
                     "utf-8",
                     HttpURLConnection.HTTP_NO_CONTENT,
                     "No Content",
-                    mapOf<String, String>(),
+                    emptyMap(),
                     ByteArrayInputStream(ByteArray(0))
                 )
             } else {
@@ -373,9 +373,8 @@ class MainActivity : AppCompatActivity() {
      * a recognised ad-script URL path pattern.
      */
     private fun isAdUrl(url: String): Boolean {
-        val lower = url.lowercase()
-        return AD_HOSTS.any { host -> lower.contains(host) } ||
-                AD_URL_PATTERNS.any { pattern -> lower.contains(pattern) }
+        return AD_HOSTS.any { host -> url.contains(host, ignoreCase = true) } ||
+                AD_URL_PATTERNS.any { pattern -> url.contains(pattern, ignoreCase = true) }
     }
 
     // -----------------------------------------------------------------------
