@@ -187,7 +187,7 @@ class MainActivity : AppCompatActivity() {
             val method = settings.javaClass.getMethod("setAppCacheEnabled", Boolean::class.javaPrimitiveType)
             method.invoke(settings, true)
         } catch (e: NoSuchMethodException) {
-            Log.w(TAG, "setAppCacheEnabled not present on this SDK, skipping")
+            Log.w(TAG, "setAppCacheEnabled not present on this SDK, skipping", e)
         } catch (e: Exception) {
             Log.w(TAG, "Failed to enable AppCache via reflection", e)
         }
@@ -324,7 +324,7 @@ class MainActivity : AppCompatActivity() {
         ) {
             super.onReceivedError(view, request, error)
             if (request?.isForMainFrame == true) {
-                Log.e(TAG, "WebView main-frame error: ${error?.description}")
+                Log.e(TAG, "WebView main-frame error: $error")
                 showOffline()
             }
         }
@@ -411,9 +411,16 @@ class MainActivity : AppCompatActivity() {
     /** Returns `true` when the device has an active network with internet access. */
     private fun isOnline(): Boolean {
         val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val network = cm.activeNetwork ?: return false
-        val nc = cm.getNetworkCapabilities(network) ?: return false
-        return nc.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network = cm.activeNetwork ?: return false
+            val nc = cm.getNetworkCapabilities(network) ?: return false
+            nc.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
+        } else {
+            // Fallback for older devices
+            @Suppress("DEPRECATION")
+            val info = cm.activeNetworkInfo ?: return false
+            info.isConnected
+        }
     }
 
     // -----------------------------------------------------------------------
